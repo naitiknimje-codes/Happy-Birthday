@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Little Surprise 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,500;1,500&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="loader" class="loader" aria-label="Loading"><span>💗</span></div>
+  <div id="hearts" class="hearts" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <!-- 1. Opening screen -->
+  <section id="gift-screen" class="gift-screen">
+    <h1 class="script">Hey, Someone Special!</h1>
+    <p class="sub">I made a little something for you. Ready for a surprise?</p>
+    <div class="gift" id="gift" aria-hidden="true">
+      <div class="lid"></div>
+      <div class="box"></div>
+    </div>
+    <button id="open-btn" class="btn">Open Your Surprise 🎁</button>
+  </section>
+
+  <div id="site" class="site hidden">
+    <header class="nav">
+      <a href="#hero" class="logo script">For You 💗</a>
+      <button id="menu-btn" class="menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav id="menu">
+        <a href="#hero">Home</a><a href="#memories">Photos</a><a href="#story">Story</a>
+        <a href="#message">Letter</a><a href="#special">Reasons</a><a href="#cake">Wish</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 2. Hero -->
+      <section id="hero" class="section hero">
+        <div class="stars" aria-hidden="true"><i style="top:18%;left:12%"></i><i
+            style="top:30%;left:82%;animation-delay:.6s"></i><i style="top:62%;left:8%;animation-delay:1.2s"></i><i
+            style="top:70%;left:88%;animation-delay:.3s"></i><i style="top:14%;left:60%;animation-delay:.9s"></i></div>
+        <div class="balloons" aria-hidden="true"><span style="--c:#f4b6c8;left:6%">🎈</span><span
+            style="--c:#cdbbf0;right:6%;animation-delay:1s">🎈</span></div>
+        <h2 class="script big">Happy Birthday, Krishu! ❤️</h2>
+        <p class="lead">Today is all about celebrating someone who makes ordinary conversations feel special.</p>
+        <p class="date">15 November</p>
+        <div class="mini-cake" aria-hidden="true">🎂</div>
+      </section>
+
+      <!-- 3. Photos -->
+      <section id="memories" class="section reveal">
+        <h2 class="title">Her Beautiful Memories 📸</h2>
+        <div class="gallery" id="gallery"></div>
+      </section>
+
+      <!-- 4. Story timeline -->
+      <section id="story" class="section reveal">
+        <h2 class="title">Some Connections Are Unexpectedly Special</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+
+      <!-- 5. Letter -->
+      <section id="message" class="section reveal">
+        <h2 class="title">There's something I wanted to tell you...</h2>
+        <div class="envelope" id="envelope" aria-hidden="true">
+          <div class="flap"></div>
+          <div class="pocket"></div>
+        </div>
+        <button id="letter-btn" class="btn">Open Your Letter 💌</button>
+        <article id="letter" class="letter hidden" aria-live="polite">
+          <p id="letter-text"></p>
+        </article>
+      </section>
+
+      <!-- 6. Compliments -->
+      <section id="special" class="section reveal">
+        <h2 class="title">Just A Few Things That Make You Special</h2>
+        <p id="compliment" class="compliment" aria-live="polite">Tap the button below…</p>
+        <button id="compliment-btn" class="btn">Tell Me Something Nice ✨</button>
+      </section>
+
+      <!-- 7. Cake -->
+      <section id="cake" class="section reveal">
+        <h2 class="title">Make a Wish 🎂</h2>
+        <div class="cake" id="cake" aria-hidden="true">
+          <div class="candles"><i class="candle"><b class="flame"></b></i><i class="candle"><b class="flame"></b></i><i
+              class="candle"><b class="flame"></b></i></div>
+          <div class="tier t2"></div>
+          <div class="tier t1"></div>
+          <div class="plate"></div>
+        </div>
+        <button id="wish-btn" class="btn">Make a Wish 🌟</button>
+        <p id="wish-msg" class="wish hidden">May all your wishes come true! 💗</p>
+      </section>
+
+      <!-- 9. Finale -->
+      <section id="finale" class="section finale reveal">
+        <h2 class="script big">Once Again, Happy Birthday!</h2>
+        <p class="lead">Some people make life a little more beautiful just by being part of it. I'm genuinely glad our
+          paths crossed again. Keep smiling, keep growing, and keep being you. Here's to more conversations, laughter,
+          and hopefully our first meeting someday.</p>
+        <button id="again-btn" class="btn ghost">Send Some Sparkle ✨</button>
+      </section>
+    </main>
+
+    <!-- 8. Music -->
+    <div class="player" id="player">
+      <button id="play-btn" aria-label="Play music">▶</button>
+      <button id="mute-btn" aria-label="Mute music">🔊</button>
+      <input id="vol" type="range" min="0" max="1" step="0.05" value="0.4" aria-label="Volume">
+      <span class="bars" id="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <small id="music-note" class="hidden">Add audio/iktara.mp3</small>
+      <audio id="audio" src="audio/birthday-song.mp3" loop preload="none"></audio>
+    </div>
+    <button id="top-btn" class="top-btn hidden" aria-label="Back to top">↑</button>
+  </div>
+
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button id="lb-close" aria-label="Close">✕</button>
+    <figure><img id="lb-img" alt="">
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
