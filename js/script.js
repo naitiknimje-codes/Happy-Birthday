@@ -1,9 +1,9 @@
 /* ===== EDIT ME: all personal content lives here ===== */
 const CONFIG = {
   photos: [
-    { src: 'images/photo1.jpg', caption: 'Your beautiful smile.' },
-    { src: 'images/photo2.jpg', caption: 'Just being your wonderful self.' },
-    { src: 'images/photo3.jpg', caption: 'A little collection of beautiful moments.' }
+    { src: 'images/photo1.JPG', caption: 'Your beautiful smile.' },
+    { src: 'images/photo2.JPG', caption: 'Just being your wonderful self.' },
+    { src: 'images/photo3.JPG', caption: 'A little collection of beautiful moments.' }
   ],
   chapters: [
     { icon: '🎒', title: 'The Beginning', text: 'We first met in Class 2. Back then, neither of us probably imagined that our paths would cross again in such an unexpected way.' },
